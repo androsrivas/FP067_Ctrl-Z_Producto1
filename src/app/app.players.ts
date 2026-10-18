@@ -28,7 +28,7 @@ export const PLAYERS = [
     edad: 26,
     altura: 1.94,
     foto: 'assets/players/diego.jpg',
-    video: 'assets/videos/diego.mp4',
+    video:  'assets/videos/diego.mp4',
   },
   {
     id: 3,
