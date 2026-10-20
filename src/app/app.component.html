@@ -32,3 +32,46 @@
 <hr>
 
 }
+<header class="bg-dark text-white p-3">
+  <h1 class="h3 m-0">Plantilla EQUIPO BASKET</h1>
+</header>
+
+<main class="container-fluid px-4">
+  <div class="row g-4">
+    <!-- Zona 1: Lista de jugadores (columna izquierda) -->
+    <section class="col-12 col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-primary text-white font-weight-bold">
+          Lista de Jugadores
+        </div>
+        <div class="card-body">
+         <app-players></app-players>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zona 2: Detalle del jugador seleccionado -->
+    <section class="col-12 col-md-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-header bg-success text-white font-weight-bold">
+              Ficha Técnica
+            </div>
+            <div class="card-body">
+              <app-detail></app-detail>
+            </div>
+          </div>
+    </section>
+    
+    <!-- Zona 3: Reproductor video -->
+     <section class="col-12 col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-header bg-dark text-white font-weight-bold">
+            Vídeo Destacado
+          </div>
+          <div class="card-body">
+            <app-media></app-media>
+          </div>
+        </div>
+      </section>
+    </div>
+</main>
