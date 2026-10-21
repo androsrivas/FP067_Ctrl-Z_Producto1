@@ -1,0 +1,21 @@
+# Revisor asignado según la rotación: A revisa B, B revisa C, C revisa D, D revisa E, E revisa A
+
+# Detalle + comunicación (B) -> revisa A
+/src/app/detail/                @androsrivas
+
+# Reproductor / MediaComponent (C) -> revisa B
+/src/app/media/                 @uoc-icolmenar
+
+# Dades, assets, buscador, CodeSandbox, doc. técnica (D) -> revisa C
+/src/app/data/                  @mmorenomoya
+/src/assets/                    @mmorenomoya
+/docs/                          @mmorenomoya
+
+# UX/UI y diseño visual (E) -> revisa D
+/src/styles.css                 @mpradod
+/src/styles/                    @mpradod
+
+# Listado + pipe + DevOps (A) -> revisa E
+/src/app/players/               @roche-tan
+/src/app/pipes/                 @roche-tan
+/.github/                       @roche-tan
