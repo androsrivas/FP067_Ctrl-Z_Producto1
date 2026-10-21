@@ -1,0 +1,22 @@
+# Por defecto: DevOps (A). Las reglas siguientes tienen prioridad.
+*                               @androsrivas
+
+# Detalle + comunicación (B) -> revisa A
+/src/app/detail/                @androsrivas
+
+# Reproductor / MediaComponent (C) -> revisa B
+/src/app/media/                 @uoc-icolmenar
+
+# Datos, assets, buscador, doc. técnica (D) -> revisa C
+/src/app/data/                  @mmorenomoya
+/src/assets/                    @mmorenomoya
+/docs/                          @mmorenomoya
+
+# UX/UI y diseño visual (E) -> revisa D
+/src/styles.css                 @mpradod
+/src/styles/                    @mpradod
+
+# Listado + pipe (A) -> revisa E
+/src/app/players/               @roche-tan
+/src/app/pipes/                 @roche-tan
+/.github/                       @roche-tan
