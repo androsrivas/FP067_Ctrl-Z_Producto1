@@ -1,15 +1,32 @@
 <h1>Equipo de Baloncesto</h1>
 
+<select
+  #filterSelect
+  (change)="filterType = filterSelect.value">
+
+  <option value="nombre">Nombre</option>
+  <option value="apellido">Apellido</option>
+  <option value="posicion">Posición</option>
+  <option value="edad">Edad</option>
+
+</select>
+
 <input
   type="text"
   placeholder="Buscar jugador..."
-  #searchBox
-  (input)="searchText = searchBox.value"
+  [(ngModel)]="searchText"
 />
+
+<button (click)="limpiarFiltros()">
+  Limpiar filtros
+</button>
 
 <hr>
 
-@for (player of filteredPlayers; track player.id) {
+@for (
+player of players | playerFilter:searchText:filterType;
+track player.id
+) {
 
 <div>
 
