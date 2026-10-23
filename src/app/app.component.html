@@ -1,37 +1,3 @@
-<h1>Equipo de Baloncesto</h1>
-
-<input
-  type="text"
-  placeholder="Buscar jugador..."
-  #searchBox
-  (input)="searchText = searchBox.value"
-/>
-
-<hr>
-
-@for (player of filteredPlayers; track player.id) {
-
-<div>
-
-  <h2>{{ player.nombre }} {{ player.apellido }}</h2>
-
-  <p>Posición: {{ player.posicion }}</p>
-
-  <p>Edad: {{ player.edad }}</p>
-
-  <p>Altura: {{ player.altura }} m</p>
-
-  <img
-    [src]="player.foto"
-    [alt]="player.nombre"
-    width="200"
-  >
-
-</div>
-
-<hr>
-
-}
 <header class="bg-dark text-white p-3">
   <h1 class="h3 m-0">Plantilla EQUIPO BASKET</h1>
 </header>
