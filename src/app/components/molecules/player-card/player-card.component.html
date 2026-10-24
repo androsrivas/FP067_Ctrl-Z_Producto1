@@ -1,1 +1,19 @@
-<p>player-card works!</p>
+<div class="card shadow-sm mb-2 player-card"
+    [class.selected]="selected"
+    role="button"
+    tabindex="0"
+    (click)="cardClick.emit(player)"
+    (keydown.enter)="cardClick.emit(player)">
+    <div class="row g-0 align-items-center">
+        <div class="col-3">
+            <img [src]="player.foto"  [alt]="player.nombre + ' ' + player.apellidos" class="player-photo rounded-start">
+        </div>
+        <div class="col-9">
+            <div classs="card-body py-2">
+                <h3 class="h6 mb-1">#{{ player.dorsal }} {{ player.nombre }} {{ player.apellidos }}</h3>
+                <span class="badge text-bg-primary me-2">{{ player.posicion }}</span>
+                <small class="text-muted">{{ player.edad}} años · {{ player.altura }} m</small>
+            </div>
+        </div>
+    </div>
+</div>
