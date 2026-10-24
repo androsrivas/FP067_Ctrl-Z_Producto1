@@ -1,32 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { PlayersComponent } from './components/players/players.component';
-import { DetailComponent } from './components/detail/detail.component';
-import { MediaComponent } from './components/media/media.component';
+import { TeamComponent } from './pages/team/team.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlayersComponent, DetailComponent, MediaComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [TeamComponent],
+  template: `<app-team></app-team>`
 })
-export class AppComponent {
-
-  title = 'ctrlZ_producto1';
-
-  players = PLAYERS;
-
-  searchText = '';
-
-  get filteredPlayers() {
-
-    return this.players.filter(player =>
-      player.nombre.toLowerCase().includes(this.searchText.toLowerCase()) ||
-      player.apellido.toLowerCase().includes(this.searchText.toLowerCase()) ||
-      player.posicion.toLowerCase().includes(this.searchText.toLowerCase())
-    );
-
-  }
-
-}
+export class AppComponent {}
