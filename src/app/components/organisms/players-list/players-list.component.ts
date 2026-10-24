@@ -15,10 +15,10 @@ export class PlayersListComponent {
   players: Player[] = PLAYERS_DATA;
 
   @Input() selectedId: number | null = null;
-  @Output() playerSelectd = new EventEmitter<Player>();
+  @Output() playerSelected = new EventEmitter<Player>();
 
   select(player: Player): void {
-    this.playerSelectd.emit(player);
+    this.playerSelected.emit(player);
   }
 
   trackById(_: number, player: Player): number {
