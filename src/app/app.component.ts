@@ -8,3 +8,5 @@ import { TeamComponent } from './pages/team/team.component';
   template: `<app-team></app-team>`
 })
 export class AppComponent {}
+
+export class AppComponent {}
