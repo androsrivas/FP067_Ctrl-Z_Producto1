@@ -12,6 +12,6 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 })
 export class PlayerCardComponent {
   @Input({ required: true }) player!: Player;
-  @Input() isSelected: boolean = false;
-  @Output() detailClick = new EventEmitter<number>();
+  @Input() selected: boolean = false;
+  @Output() cardClick = new EventEmitter<Player>();
 }

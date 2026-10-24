@@ -1,16 +1,11 @@
-<div class="card" [class.selected]="isSelected">
+<div class="card player-card" [class.selected]="selected" (click)="cardClick.emit(player)">
     <div class="card-media">
         <img *ngIf="player.foto" [src]="player.foto" [alt]="player.nombre" class="media-img" />
     </div>
-
-    <h3 class="card-title">{{ player.nombre }}</h3>
-
+    <h3 class="card-title">#{{ player.dorsal }} {{ player.nombre }} {{ player.apellidos }}</h3>
     <div class="card-meta">
         <span class="card-position">{{ player.posicion }}</span>
         <span class="card-details">{{ player.edad }} años · {{ player.altura }} m</span>
     </div>
-
-    <app-button (onClick)="detailClick.emit(player.id)">
-        Ver detalle
-    </app-button>
+    <app-button>Ver detalle</app-button>
 </div>
