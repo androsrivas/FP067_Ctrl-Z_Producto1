@@ -1,1 +1,15 @@
-<p>filter-bar works!</p>
+<div class="filter-bar">
+    <div class="search-container">
+        <app-input placeholder="Buscar jugador..." (valueCHange)="searchChange.emit($event)">
+        </app-input>
+    </div>
+
+    <div class="sort-container">
+        <label for="sort-select" class="sort-label">Ordenar:</label>
+        <select  id="sort-select" class="sort-select" (change)="onSortSelect($event)">
+            <option value="position">Por posición</option>
+            <option value="name">Por nombre</option>
+            <option value="age">Por edad</option>
+        </select>
+    </div>
+</div>
