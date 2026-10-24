@@ -1,11 +1,10 @@
-import { Component } from "@angular/core";
-import { PageTeamComponent } from "./pages/team/team.page";
+import { Component } from '@angular/core';
+import { TeamComponent } from './pages/team/team.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [PageTeamComponent],
-  template: `<app-page-team></app-page-team>`
+  imports: [TeamComponent],
+  template: `<app-team></app-team>`
 })
-
 export class AppComponent {}
