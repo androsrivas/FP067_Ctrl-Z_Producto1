@@ -14,7 +14,7 @@ export const PLAYERS_DATA: Player[] = [
     asistencias: 6.2,
     rebotes: 3.4,
     biografia: 'Asistencias, visión de juego y momentos destacados de nuestro base.',
-    foto: 'assets/images/alvaro.jpg',
+    foto: 'assets/players/alvaro.jpg',
     videoUrl: 'assets/videos/alvaro.mp4'
   },
   {
@@ -30,7 +30,7 @@ export const PLAYERS_DATA: Player[] = [
     asistencias: 3.1,
     rebotes: 2.8,
     biografia: 'Gran tirador exterior y especialista defensivo.',
-    foto: 'assets/images/diego.jpg',
+    foto: 'assets/players/diego.jpg',
     videoUrl: 'assets/videos/diego.mp4'
   },
   {
@@ -46,7 +46,7 @@ export const PLAYERS_DATA: Player[] = [
     asistencias: 2.4,
     rebotes: 5.1,
     biografia: 'Alero versátil con gran capacidad penetradora.',
-    foto: 'assets/images/lucas.jpg',
+    foto: 'assets/players/lucas.jpg',
     videoUrl: 'assets/videos/lucas.mp4'
   },
   {
@@ -62,7 +62,7 @@ export const PLAYERS_DATA: Player[] = [
     asistencias: 1.8,
     rebotes: 8.4,
     biografia: 'Dominador del rebote y anotador en la pintura.',
-    foto: 'assets/images/mateo.jpg',
+    foto: 'assets/players/mateo.jpg',
     videoUrl: 'assets/videos/mateo.mp4'
   },
   {
@@ -78,7 +78,7 @@ export const PLAYERS_DATA: Player[] = [
     asistencias: 1.2,
     rebotes: 9.7,
     biografia: 'Pívot intimidador con gran presencia bajo el aro.',
-    foto: 'assets/images/pablo.jpg',
+    foto: 'assets/players/pablo.jpg',
     videoUrl: 'assets/videos/pablo.mp4'
   }
 ];
