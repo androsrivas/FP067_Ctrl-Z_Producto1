@@ -1,94 +1,47 @@
-<h1>Equipo de Baloncesto</h1>
-
-<select
-  #filterSelect
-  (change)="filterType = filterSelect.value">
-
-  <option value="nombre">Nombre</option>
-  <option value="apellido">Apellido</option>
-  <option value="posicion">Posición</option>
-  <option value="edad">Edad</option>
-
-</select>
-
-<input
-  type="text"
-  placeholder="Buscar jugador..."
-  [(ngModel)]="searchText"
-/>
-
-<button (click)="limpiarFiltros()">
-  Limpiar filtros
-</button>
-
-<hr>
-
-@for (
-player of players | playerFilter:searchText:filterType;
-track player.id
-) {
-
-<div>
-
-  <h2>{{ player.nombre }} {{ player.apellido }}</h2>
-
-  <p>Posición: {{ player.posicion }}</p>
-
-  <p>Edad: {{ player.edad }}</p>
-
-  <p>Altura: {{ player.altura }} m</p>
-
-  <img
-    [src]="player.foto"
-    [alt]="player.nombre"
-    width="200"
-  >
-
-</div>
-
-<hr>
-
-}
 <header class="bg-dark text-white p-3">
   <h1 class="h3 m-0">Plantilla EQUIPO BASKET</h1>
 </header>
 
 <main class="container-fluid px-4">
+
   <div class="row g-4">
-    <!-- Zona 1: Lista de jugadores (columna izquierda) -->
+
     <section class="col-12 col-md-4">
       <div class="card shadow-sm h-100">
         <div class="card-header bg-primary text-white font-weight-bold">
           Lista de Jugadores
         </div>
+
         <div class="card-body">
-         <app-players></app-players>
+          <app-players></app-players>
         </div>
       </div>
     </section>
 
-    <!-- Zona 2: Detalle del jugador seleccionado -->
     <section class="col-12 col-md-4">
-          <div class="card shadow-sm h-100">
-            <div class="card-header bg-success text-white font-weight-bold">
-              Ficha Técnica
-            </div>
-            <div class="card-body">
-              <app-detail></app-detail>
-            </div>
-          </div>
-    </section>
-    
-    <!-- Zona 3: Reproductor video -->
-     <section class="col-12 col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-header bg-dark text-white font-weight-bold">
-            Vídeo Destacado
-          </div>
-          <div class="card-body">
-            <app-media></app-media>
-          </div>
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-success text-white font-weight-bold">
+          Ficha Técnica
         </div>
-      </section>
-    </div>
+
+        <div class="card-body">
+          <app-detail></app-detail>
+        </div>
+      </div>
+    </section>
+
+    <section class="col-12 col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-dark text-white font-weight-bold">
+          Vídeo Destacado
+        </div>
+
+        <div class="card-body">
+          <app-media></app-media>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
 </main>

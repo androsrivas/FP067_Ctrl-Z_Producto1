@@ -1,1 +1,48 @@
-<p>players works!</p>
+<select
+  #filterSelect
+  (change)="filterType = filterSelect.value">
+
+  <option value="nombre">Nombre</option>
+  <option value="apellido">Apellido</option>
+  <option value="posicion">Posición</option>
+  <option value="edad">Edad</option>
+
+</select>
+
+<input
+  type="text"
+  placeholder="Buscar jugador..."
+  [(ngModel)]="searchText"
+/>
+
+<button (click)="limpiarFiltros()">
+  Limpiar filtros
+</button>
+
+<hr>
+
+@for (
+player of players | playerFilter:searchText:filterType;
+track player.id
+) {
+
+<div>
+
+  <h2>{{ player.nombre }} {{ player.apellido }}</h2>
+
+  <p>Posición: {{ player.posicion }}</p>
+
+  <p>Edad: {{ player.edad }}</p>
+
+  <p>Altura: {{ player.altura }} m</p>
+
+  <img
+    [src]="player.foto"
+    [alt]="player.nombre"
+    width="200">
+
+</div>
+
+<hr>
+
+}
