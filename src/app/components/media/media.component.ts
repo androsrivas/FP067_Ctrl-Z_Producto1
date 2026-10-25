@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-media',
@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './media.component.css'
 })
 export class MediaComponent {
+
+  @Input()
+  player: any;
 
 }

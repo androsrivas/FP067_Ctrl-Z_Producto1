@@ -1,1 +1,19 @@
-<p>media works!</p>
+@if (player) {
+
+  <h3>{{ player.nombre }} {{ player.apellido }}</h3>
+
+  <video
+    width="100%"
+    controls
+    [src]="player.video">
+
+    Tu navegador no soporta vídeo.
+
+  </video>
+
+}
+@else {
+
+  <p>Selecciona un jugador para visualizar su vídeo.</p>
+
+}
