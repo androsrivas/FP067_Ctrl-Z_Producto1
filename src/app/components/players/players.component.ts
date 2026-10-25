@@ -14,6 +14,7 @@ import { PlayerFilterPipe } from '../../player-filter.pipe';
   templateUrl: './players.component.html',
   styleUrl: './players.component.css'
 })
+
 export class PlayersComponent {
 
   players = PLAYERS;
@@ -22,10 +23,18 @@ export class PlayersComponent {
 
   filterType = 'nombre';
 
+  selectedPlayer: any = null;
+
   limpiarFiltros() {
 
     this.searchText = '';
     this.filterType = 'nombre';
+
+  }
+
+  seleccionarJugador(player: any) {
+
+    this.selectedPlayer = player;
 
   }
 
