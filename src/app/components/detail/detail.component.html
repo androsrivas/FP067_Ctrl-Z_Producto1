@@ -1,1 +1,21 @@
-<p>detail works!</p>
+@if (player) {
+
+  <h2>{{ player.nombre }} {{ player.apellido }}</h2>
+
+  <p><strong>Posición:</strong> {{ player.posicion }}</p>
+
+  <p><strong>Edad:</strong> {{ player.edad }}</p>
+
+  <p><strong>Altura:</strong> {{ player.altura }} m</p>
+
+  <img
+    [src]="player.foto"
+    [alt]="player.nombre"
+    width="250">
+
+}
+@else {
+
+  <p>Selecciona un jugador para ver su ficha técnica.</p>
+
+}

@@ -13,7 +13,9 @@
         </div>
 
         <div class="card-body">
-          <app-players></app-players>
+         <app-players
+  (playerSelected)="onPlayerSelected($event)">
+</app-players>
         </div>
       </div>
     </section>
@@ -25,7 +27,9 @@
         </div>
 
         <div class="card-body">
-          <app-detail></app-detail>
+          <app-detail
+  [player]="selectedPlayer">
+</app-detail>
         </div>
       </div>
     </section>

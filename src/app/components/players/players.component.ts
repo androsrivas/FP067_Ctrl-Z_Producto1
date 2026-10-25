@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { PLAYERS } from '../../app.players';
@@ -17,6 +17,9 @@ import { PlayerFilterPipe } from '../../player-filter.pipe';
 
 export class PlayersComponent {
 
+  @Output()
+playerSelected = new EventEmitter<any>();
+
   players = PLAYERS;
 
   searchText = '';
@@ -34,8 +37,10 @@ export class PlayersComponent {
 
   seleccionarJugador(player: any) {
 
-    this.selectedPlayer = player;
+  this.selectedPlayer = player;
 
-  }
+  this.playerSelected.emit(player);
+
+}
 
 }
