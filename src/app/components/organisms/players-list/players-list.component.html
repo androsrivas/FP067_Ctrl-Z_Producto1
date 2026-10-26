@@ -1,1 +1,12 @@
-<p>players-list works!</p>
+<ng-container *ngIf="players.length > 0; else empty">
+    <app-player-card
+        *ngFor="let player of players; trackBy: trackById"
+        [player]="player"
+        [selected]="player.id === selectedId"
+        (cardClick)="select($event)">
+    </app-player-card>
+</ng-container>
+
+<ng-template #empty>
+    <p class="text-muted text-center my-3">No hay jugadores.</p>
+</ng-template>

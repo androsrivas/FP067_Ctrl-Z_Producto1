@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: 'button.component.css'
 })
 export class ButtonComponent {
-  @Input() label: string = 'Ver Detalle';
-  @Input() type: string = 'button';
-  @Output() onClick = new EventEmitter<Event>();
+  @Input() type: 'button' | 'submit' = 'button';
+  @Input() fullWidth: boolean = true;
+  @Output() onClick = new EventEmitter<MouseEvent>();
 }
