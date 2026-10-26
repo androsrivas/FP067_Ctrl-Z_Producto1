@@ -1,7 +1,10 @@
 <ng-container *ngIf="players | filterPlayers: searchText : position as filtered">
     <ng-container *ngIf="filtered.length > 0; else empty">
-        <app-player-card *ngFor="let player of filtered; trackBy: trackById" [player]="player"
-            [selected]="player.id === selectedId" (cardClick)="select($event)">
+        <app-player-card
+            *ngFor="let player of players; trackBy: trackById"
+            [player]="player"
+            [selected]="player.id === selectedId"
+            (cardClick)="select($event)">
         </app-player-card>
     </ng-container>
 </ng-container>
