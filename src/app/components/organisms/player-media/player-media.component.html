@@ -1,1 +1,20 @@
-<p>player-media works!</p>
+<div class="card media-card">
+    <div class="media-header">
+        <h3 class="media-title">En la cancha</h3>
+        <span>
+            {{ totalVideos < 10 ? '0' + totalVideos : totalVideos }} vídeos
+        </span>
+    </div>
+
+    <div class="card-media-placeholder media-video-container" (click)="onPlay()">
+        <button type="button" class="play-button" aria-label="Reproducir vídeo">
+            <svg viewBox="0 0 24 24" class="play-icon">
+                <path d="M8 5v14l11-7z" fill="currentColor"/>
+            </svg>
+        </button>
+    </div>
+
+    <p *ngIf="descripcion" class="media-description">
+        {{ descripcion }}
+    </p>
+</div>
