@@ -1,27 +1,81 @@
-# CtrlZProducto1
+# FP067 - Ctrl-Z | Producto 1: EQUIPO BASKET
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 
-## Development server
+Este repositorio contiene la entrega del **Producto 1** del equipo **Ctrl-Z** para la asignatura **FP067**. Consiste en una aplicación Web de Página Única (*Single Page Application* - SPA) desarrollada con **Angular** y estilizada con **Bootstrap**, diseñada para la gestión y visualización de un equipo de baloncesto (**EQUIPO BASKET**).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Descripción del Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+El objetivo principal de esta aplicación es ofrecer una interfaz centralizada, atractiva y funcional donde gestionar la plantilla de un equipo de baloncesto. La aplicación permite explorar un listado de jugadores, filtrar la plantilla mediante parámetros específicos, visualizar la ficha detallada de cada deportista y reproducir contenido multimedia personalizado de sus mejores jugadas.
 
-## Build
+### Características Principales
+- **Encabezado (Header):** Identificador y branding oficial del **EQUIPO BASKET**.
+- **Listado de Jugadores (`PlayersComponent`):** Visualización interactiva de la plantilla con soporte de selección visual del ítem activo.
+- **Detalle del Jugador (`DetailComponent`):** Ficha técnica detallada que muestra información completa (nombre, apellidos, posición, edad, altura, etc.) con opción de cierre para restablecer la selección.
+- **Reproductor Multimedia (`MediaComponent`):** Componente dedicado a la previsualización de vídeo de jugadas destacadas con controles personalizados (play, pause, stop, barra de progreso y control de volumen).
+- **Filtros Avanzados (Pipes):** Búsqueda dinámica basada en 3 parámetros (nombre, posición y edad) mediante un campo de texto y un menú desplegable (*dropdown*).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Estructura de Componentes y Arquitectura
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La aplicación se compone de 3 componentes principales interconectados mediante eventos y bindings de Angular (`@Input` / `@Output`), además de utilizar *pipes* personalizados y un archivo independiente para la carga de datos locales:
 
-## Running end-to-end tests
+```text
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+```
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Requisitos del Entorno
+
+Para ejecutar este proyecto en local es necesario contar con:
+
+- Node.js: v16.x o superior
+- npm: v8.x o superior
+- Angular CLI: v14.x o superior
+- Git: Para el control de versiones
+- IDE recomendado: Visual Studio Code, Sublime Text o Atom
+
+## Instalación y ejecución local
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/androsrivas/FP067_Ctrl-Z_Producto1.git
+cd FP067_Ctrl-Z_Producto1
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Ejecutar el servidor de desarrollo:
+```bash
+ng serve --open
+```
+> La aplicación se abrirá automáticamente en `http://localhost:4200`.
+
+### Tecnologías usadas
+
+- Frontend Framework: Angular 17
+- Estilos y UI Framework: Bootstrap / HTML5 / CSS3
+- Lenguaje: TypeScript
+- Entorno de despliegue en la nube: CodeSandbox
+- Gestión de tareas: Trello
+
+
+## Equipo de desarrollo: Ctrl + Z
+
+| Integrante | Rol                                                  | GitHub               |
+|------------|------------------------------------------------------|----------------------|
+| Andrea     | DevOps + Listado + Pipe + GitHub                     | @androsrivas         |
+| Iván       | Detalle + Comunicación                               | @uoc-icolmenarblanco |
+| Meritxell  | Reproductor + entrega                                | @mmorenomoya         |
+| Marcelo    | Datos/assets + buscador + CodeSandbox + doc. técnica | @mpradod             |
+| Roche      | UX/UI + diseño visual + doc. diseño                  | @roche-tan           |
