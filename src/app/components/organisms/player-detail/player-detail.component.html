@@ -1,4 +1,4 @@
-<div *ngIf="playerM else noPlayer" class="detail-container">
+<div *ngIf="player else noPlayer" class="detail-container">
 
     <!-- TARJETA PRINCIPAL -->
     <div class="card">
@@ -24,41 +24,42 @@
                             <span class="card-details"> · Primer equipo</span>
                         </p>
             </div>
+        </section>
+
+
+        <!-- INFO PERSONAL -->
+        <section class="personal-info-grid">
+            <div *ngFor="let item of personalInfo" class="info-item">
+                <span class="info-label">{{ item.label }}</span>
+                <span class="info-value">{{ item.value }}</span>
+            </div>
+        </section>
+
+        <!-- PROMEDIOS -->
+        <section class="stats-section">
+            <div class="stats-header">
+                <span class="stats-title">Promedios por partido</span>
+                <span class="text-sorting">2026 / 2027</span>
+            </div>
+
+            <div class="stats-grid">
+                <app-stat-card [value]="player.puntos" label="Puntos"></app-stat-card>
+                <app-stat-card [value]="player.asistencias" label="Asistencias"></app-stat-card>
+                <app-stat-card [value]="player.rebotes" label="Rebotes"></app-stat-card>
+            </div>
+
+            <!-- BIOGRAFÍA -->
+            <p *ngIf="player.biografia" class="bio-text">
+                {{ player.biografia }}
+            </p>
+        </section>
+
+        <!-- COMPONENTE MEDIA -->
+        <app-player-media [videoUrl]="player.videoUrl" (play)="onPlayVideo($event)"></app-player-media>
     </div>
 
-    <!-- INFO PERSONAL -->
-    <section class="personal-info-grid">
-        <div *ngFor="let item of personalInfo" class="info-item">
-            <span class="info-label">{{ item.label }}</span>
-            <span class="info-value">{{ item.value }}</span>
+    <ng-template #noPlayer>
+        <div class="card empty-state">
+            <p class="card-details">Selecciona un jugador para ver los detalles.</p>
         </div>
-    </section>
-
-    <!-- PROMEDIOS -->
-    <section class="stats-section">
-        <div class="stats-header">
-            <span class="stats-title">Promedios por partido</span>
-            <span class="text-sorting">2026 / 2027</span>
-        </div>
-
-        <div class="stats-grid">
-            <app-stat-card [value]="player.puntos" label="Puntos"></app-stat-card>
-            <app-stat-card [value]="player.asistencias" label="Asistencias"></app-stat-card>
-            <app-stat-card [value]="player.rebotes" label="Rebotes"></app-stat-card>
-        </div>
-
-        <!-- BIOGRAFÍA -->
-        <p *ngIf="player.biografia" class="bio-text">
-            {{ player.biografia }}
-        </p>
-    </section>
-
-    <!-- COMPONENTE MEDIA -->
-    <app-player-media [videoUrl]="player.videoUrl" (play)="onPlayVideo($event)"></app-player-media>
-</div>
-
-<ng-template #noPlayer>
-    <div class="card empty-state">
-        <p class="card-details">Selecciona un jugador para ver los detalles.</p>
-    </div>
-</ng-template>
+    </ng-template>
