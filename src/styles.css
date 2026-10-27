@@ -29,9 +29,8 @@
   /* Transiciones */
   --transition-fast: 0.2s ease-in-out;
 
-
   /* Puente hacia Bootstrap */
-  --bs-primary: #f97316;              
+  --bs-primary: #f97316;
   --bs-primary-rgb: 249, 115, 22;
   --bs-body-font-family: var(--font-family-base);
   --bs-body-bg: var(--color-background);
@@ -41,6 +40,7 @@
   --bs-border-color: var(--color-border);
   --bs-border-radius: var(--radius-sm);
   --bs-border-radius-lg: var(--radius-md);
+  --bs-border-radius-xl: var(--radius-lg);
   --bs-link-color: var(--color-accent);
   --bs-link-color-rgb: 249, 115, 22;
 }
@@ -74,6 +74,9 @@ body {
 }
 
 .badge-count {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   background-color: #e2e8f0;
   color: var(--text-secondary);
   font-size: 0.75rem;
@@ -143,12 +146,19 @@ body {
 
 /* Botones Acción (Accent) */
 .btn-accent {
-   --bs-btn-color: var(--text-on-dark);
+  --bs-btn-color: var(--text-on-dark);
   --bs-btn-bg: var(--color-accent);
   --bs-btn-border-color: var(--color-accent);
   --bs-btn-hover-color: var(--text-on-dark);
   --bs-btn-hover-bg: var(--color-accent);
   --bs-btn-hover-border-color: var(--color-accent);
+  --bs-btn-active-color: var(--text-on-dark);
+  --bs-btn-active-bg: var(--color-accent);
+  --bs-btn-active-border-color: var(--color-accent);
+  --bs-btn-disabled-color: var(--text-on-dark);
+  --bs-btn-disabled-bg: var(--color-accent);
+  --bs-btn-disabled-border-color: var(--color-accent);
+  --bs-btn-focus-shadow-rgb: 249, 115, 22;
   --bs-btn-border-radius: var(--radius-md);
   --bs-btn-font-size: 0.875rem;
   --bs-btn-font-weight: 600;
@@ -165,4 +175,18 @@ body {
   color: var(--text-secondary);
   font-size: 0.875rem;
   margin-top: 24px;
+}
+
+/* Campos de formulario */
+.form-control,
+.form-select {
+  border-radius: var(--radius-md);
+  padding-block: 10px;
+  padding-inline-start: 14px;
+  font-size: 0.875rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
 }
