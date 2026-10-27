@@ -27,7 +27,44 @@ El objetivo principal de esta aplicación es ofrecer una interfaz centralizada, 
 La aplicación se compone de 3 componentes principales interconectados mediante eventos y bindings de Angular (`@Input` / `@Output`), además de utilizar *pipes* personalizados y un archivo independiente para la carga de datos locales:
 
 ```text
-
+FP067_Ctrl-Z_Producto1/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── atoms/               # UI básica e indivisible
+│   │   │   │   ├── badge/
+│   │   │   │   ├── button/
+│   │   │   │   ├── input/
+│   │   │   │   ├── logo/
+│   │   │   │   ├── nav-link/
+│   │   │   │   └── stat-card/
+│   │   │   ├── molecules/           # Grupos de átomos que forman unidades funcionales
+│   │   │   │   ├── filter-bar/
+│   │   │   │   ├── media-controls/
+│   │   │   │   ├── navbar/
+│   │   │   │   └── player-card/
+│   │   │   ├── organisms/           # Secciones complejas de la interfaz
+│   │   │   │   ├── footer/
+│   │   │   │   ├── header/
+│   │   │   │   ├── player-detail/
+│   │   │   │   ├── player-media/
+│   │   │   │   └── players-list/
+│   │   │   └── templates/           # Estructura del maquetado general
+│   │   │       └── team-layout/
+│   │   ├── data/                    # Datos locales de prueba
+│   │   ├── models/                  # Interfaz Player
+│   │   ├── pages/                   # Vistas principales de la aplicación
+│   │   │   └── team/
+│   │   └── pipes/                   # Pipes de filtrado y búsqueda personalizada
+│   │
+│   └── assets/                      # Recurso multimedia local
+│       ├── players/                 # Imágenes de los jugadores
+│       └── videos/                  # Vídeos de las jugadas destacadas
+│
+├── .gitignore                       # Exclusión de node_modules/ y temporales
+├── package.json                     # Dependencias del proyecto
+└── README.md                        # Documentación oficial
 
 ```
 ---
@@ -69,6 +106,7 @@ ng serve --open
 - Entorno de despliegue en la nube: CodeSandbox
 - Gestión de tareas: Trello
 
+---
 
 ## Equipo de desarrollo: Ctrl + Z
 
