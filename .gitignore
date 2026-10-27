@@ -38,6 +38,7 @@ testem.log
 /typings
 *.zip
 *.tar.gz
+.sandboxignore
 
 # System files
 .DS_Store
