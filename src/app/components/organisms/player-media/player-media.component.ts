@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Player } from '../../../models/player.model';
 
@@ -7,20 +7,20 @@ import { Player } from '../../../models/player.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './player-media.component.html',
-  styleUrl: './player-media.component.css'
+  styleUrls: ['./player-media.component.css'],
 })
-export class PlayerMediaComponent {
-
+export class PlayerMediaComponent implements OnChanges {
   @Input() player: Player | null = null;
-  @Input() videoUrl?: string;
-  @Input() descripcion?: string;
-  @Input() totalVideos: number = 1;
+  @Input() totalVideos = 0;
+  @Input() descripcion = '';
 
-  @Output() play = new EventEmitter<string>();
+  playing = false;
+
+  ngOnChanges(): void {
+    this.playing = false; // al cambiar de jugador vuelve el placeholder
+  }
 
   onPlay(): void {
-    if (this.videoUrl) {
-      this.play.emit(this.videoUrl);
-    }
+    this.playing = true;
   }
 }
