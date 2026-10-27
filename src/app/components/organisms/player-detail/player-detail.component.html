@@ -1,65 +1,59 @@
-<div *ngIf="player else noPlayer" class="detail-container">
+<div *ngIf="player; else noPlayer" class="player-card gap-3">
 
-    <!-- TARJETA PRINCIPAL -->
-    <div class="player-card">
+    <!-- Capçalera -->
+    <div class="d-flex align-items-start gap-3">
+        <div class="avatar flex-shrink-0 rounded-3 overflow-hidden">
+            <img *ngIf="player.foto" [src]="player.foto" [alt]="player.nombre + ' ' + player.apellidos"
+                class="w-100 h-100 object-fit-cover">
+        </div>
 
-        <!-- ENCABEZADO DEL JUGADOR -->
-        <section class="detail-header">
-            <div class="avatar-container">
-                <img *ngIf="player.foto; else noPhoto" [src]="player.foto"
-                    [alt]="player.nombre + ' ' + player.apellidos" class="avatar-image">
-                <ng-template #noPhoto>
-                    <svg class="avatar-placeholder-icon" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
-                </ng-template>
-            </div>
+        <div class="flex-grow-1">
+            <small class="text-body-secondary text-uppercase">
+                Dorsal {{ player.dorsal < 10 ? '0' + player.dorsal : player.dorsal }} </small>
+                    <h2 class="card-title fs-4 mb-1">{{ player.nombre }} {{ player.apellidos }}</h2>
+                    <p class="card-position small mb-0">{{ player.posicion }} · Primer equipo</p>
+        </div>
 
-            <div class="header-info">
-                <span class="badge-dorsal">DORSAL {{ player.dorsal < 10 ? '0' + player.dorsal : player.dorsal }}</span>
-                        <h2 class="card-title">{{ player.nombre }} {{ player.apellidos }}</h2>
-                        <p class="position-team">
-                            <span class="card-position">{{ player.posicion }}</span>
-                            <span class="card-details"> · Primer equipo</span>
-                        </p>
-            </div>
+        <button type="button" class="btn-close" aria-label="Cerrar detalle" (click)="close()"></button>
+    </div>
 
-            <button type="button" class="close-button" aria-label="Cerrar detalle" (click)="close()">x</button>
-        </section>
+    <!-- Info personal -->
+    <div class="row row-cols-3 g-0 border-top border-bottom py-3">
+        <div class="col" *ngFor="let item of personalInfo">
+            <div class="card-details small">{{ item.label }}</div>
+            <div class="fw-semibold">{{ item.value }}</div>
+        </div>
+    </div>
 
+    <!-- Promedios -->
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="fw-semibold">Promedios por partido</span>
+        <span class="text-sorting">2026 / 2027</span>
+    </div>
 
-        <!-- INFO PERSONAL -->
-        <section class="personal-info-grid">
-            <div *ngFor="let item of personalInfo" class="info-item">
-                <span class="info-label">{{ item.label }}</span>
-                <span class="info-value">{{ item.value }}</span>
-            </div>
-        </section>
-
-        <!-- PROMEDIOS -->
-        <section class="stats-section">
-            <div class="stats-header">
-                <span class="stats-title">Promedios por partido</span>
-                <span class="text-sorting">2026 / 2027</span>
-            </div>
-
-            <div class="stats-grid">
+    <div class="row row-cols-3 g-2 text-center">
+        <div class="col">
+            <div class="border rounded-3 p-3">
                 <app-stat-card [value]="player.puntos" label="Puntos"></app-stat-card>
+            </div>
+        </div>
+        <div class="col">
+            <div class="border rounded-3 p-3">
                 <app-stat-card [value]="player.asistencias" label="Asistencias"></app-stat-card>
+            </div>
+        </div>
+        <div class="col">
+            <div class="border rounded-3 p-3">
                 <app-stat-card [value]="player.rebotes" label="Rebotes"></app-stat-card>
             </div>
-
-            <!-- BIOGRAFÍA -->
-            <p *ngIf="player.biografia" class="bio-text">
-                {{ player.biografia }}
-            </p>
-        </section>
+        </div>
     </div>
+
+    <p *ngIf="player.biografia" class="card-details mb-0">{{ player.biografia }}</p>
 </div>
 
 <ng-template #noPlayer>
-    <div class="card empty-state">
-        <p class="card-details">Selecciona un jugador para ver los detalles.</p>
+    <div class="player-card card-details text-center">
+        Selecciona un jugador para ver los detalles.
     </div>
 </ng-template>
