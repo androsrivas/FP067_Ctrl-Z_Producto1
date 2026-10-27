@@ -56,6 +56,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "allowedHosts": [
+              ".csb.app"
+            ]
+          },
           "configurations": {
             "production": {
               "buildTarget": "ctrlZ_producto1:build:production"
