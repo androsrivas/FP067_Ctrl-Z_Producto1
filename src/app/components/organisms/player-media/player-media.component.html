@@ -1,1 +1,31 @@
-<p>player-media works!</p>
+<div class="player-media" *ngIf="player">
+
+  <div class="player-media-header">
+    <div>
+      <h2>Vídeo del jugador</h2>
+      <p>
+        {{ player.nombre }} {{ player.apellidos }}
+        · #{{ player.dorsal }}
+        · {{ player.posicion }}
+      </p>
+    </div>
+
+    <span class="media-icon">▶</span>
+  </div>
+
+  <div class="video-container">
+    <video
+      [src]="player.videoUrl"
+      controls
+      preload="metadata"
+      playsinline>
+      Tu navegador no soporta la reproducción de vídeo.
+    </video>
+  </div>
+
+  <div class="media-footer">
+    <span>Jugadas destacadas</span>
+    <span class="player-tag">#{{ player.dorsal }}</span>
+  </div>
+
+</div>

@@ -1,1 +1,67 @@
-<p>player-detail works!</p>
+
+<div class="player-detail" *ngIf="player">
+
+  <!-- CABECERA -->
+  <div class="player-detail-header">
+    <h2>Detalle del jugador</h2>
+
+    <div class="header-actions">
+      <span class="player-number">
+        #{{ player.dorsal }}
+      </span>
+
+      <button
+        type="button"
+        class="close-button"
+        (click)="close()"
+        aria-label="Cerrar detalle del jugador">
+        &times;
+      </button>
+    </div>
+  </div>
+
+  <!-- INFORMACIÓN DEL JUGADOR -->
+  <div class="player-info">
+
+    <img
+      [src]="player.foto"
+      [alt]="player.nombre + ' ' + player.apellidos"
+      class="player-photo"
+    />
+
+    <h3>{{ player.nombre }} {{ player.apellidos }}</h3>
+
+    <p>
+      <strong>Posición:</strong> {{ player.posicion }}
+    </p>
+
+    <p>
+      <strong>Edad:</strong> {{ player.edad }} años
+    </p>
+
+    <p>
+      <strong>Altura:</strong> {{ player.altura }} m
+    </p>
+
+    <p>
+      <strong>Nacionalidad:</strong> {{ player.nacionalidad }}
+    </p>
+
+  </div>
+
+  <!-- ESTADÍSTICAS -->
+  <div class="player-stats">
+    <h3>Estadísticas</h3>
+
+    <p><strong>Puntos:</strong> {{ player.puntos }}</p>
+    <p><strong>Asistencias:</strong> {{ player.asistencias }}</p>
+    <p><strong>Rebotes:</strong> {{ player.rebotes }}</p>
+  </div>
+
+  <!-- BIOGRAFÍA -->
+  <div class="player-biography">
+    <h3>Biografía</h3>
+    <p>{{ player.biografia }}</p>
+  </div>
+
+</div>
