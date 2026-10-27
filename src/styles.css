@@ -10,7 +10,7 @@
   --color-border: #e2e8f0;
   --color-media-placeholder: #f1f5f9;
 
-  /* Colores de text */
+  /* Colores de texto */
   --text-primary: #1e293b;
   --text-heading: #0f172a;
   --text-secondary: #64748b;
@@ -28,24 +28,27 @@
 
   /* Transiciones */
   --transition-fast: 0.2s ease-in-out;
+
+
+  /* Puente hacia Bootstrap */
+  --bs-primary: #f97316;              
+  --bs-primary-rgb: 249, 115, 22;
+  --bs-body-font-family: var(--font-family-base);
+  --bs-body-bg: var(--color-background);
+  --bs-body-color: var(--text-primary);
+  --bs-heading-color: var(--text-heading);
+  --bs-secondary-color: var(--text-secondary);
+  --bs-border-color: var(--color-border);
+  --bs-border-radius: var(--radius-sm);
+  --bs-border-radius-lg: var(--radius-md);
+  --bs-link-color: var(--color-accent);
+  --bs-link-color-rgb: 249, 115, 22;
 }
 
 /* ==========================================
    ESTILOS BASE Y RESETS
    ========================================== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: var(--font-family-base);
-  background-color: var(--color-background);
-  color: var(--text-primary);
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -85,7 +88,7 @@ body {
 }
 
 /* Tarjeta de Jugador (Card) */
-.card {
+.player-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -98,8 +101,8 @@ body {
 }
 
 /* Estado seleccionado o Hover de la tarjeta */
-.card:hover,
-.card.selected {
+.player-card:hover,
+.player-card.selected {
   border-color: var(--color-accent);
   box-shadow: 0 0 0 1px var(--color-accent);
 }
@@ -140,20 +143,17 @@ body {
 
 /* Botones Acción (Accent) */
 .btn-accent {
-  background-color: var(--color-accent);
-  color: var(--text-on-dark);
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  transition: opacity var(--transition-fast);
+   --bs-btn-color: var(--text-on-dark);
+  --bs-btn-bg: var(--color-accent);
+  --bs-btn-border-color: var(--color-accent);
+  --bs-btn-hover-color: var(--text-on-dark);
+  --bs-btn-hover-bg: var(--color-accent);
+  --bs-btn-hover-border-color: var(--color-accent);
+  --bs-btn-border-radius: var(--radius-md);
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-y: 10px;
+  --bs-btn-padding-x: 16px;
 }
 
 .btn-accent:hover {
