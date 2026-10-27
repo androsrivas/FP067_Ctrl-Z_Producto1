@@ -24,6 +24,8 @@
                             <span class="card-details"> · Primer equipo</span>
                         </p>
             </div>
+
+            <button type="button" class="close-button" aria-label="Cerrar detalle" (click)="close()">x</button>
         </section>
 
 
@@ -53,13 +55,11 @@
                 {{ player.biografia }}
             </p>
         </section>
-
-        <!-- COMPONENTE MEDIA -->
-        <app-player-media [videoUrl]="player.videoUrl" (play)="onPlayVideo($event)"></app-player-media>
     </div>
+</div>
 
-    <ng-template #noPlayer>
-        <div class="card empty-state">
-            <p class="card-details">Selecciona un jugador para ver los detalles.</p>
-        </div>
-    </ng-template>
+<ng-template #noPlayer>
+    <div class="card empty-state">
+        <p class="card-details">Selecciona un jugador para ver los detalles.</p>
+    </div>
+</ng-template>

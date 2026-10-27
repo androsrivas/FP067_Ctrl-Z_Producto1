@@ -19,10 +19,9 @@ export class PlayerDetailComponent {
   get personalInfo(): { label: string; value: string |number }[] {
     if (!this.player) return [];
     return [
-      { label: 'Posición', value: this.player.posicion },
-      { label: 'Dorsal', value: this.player.dorsal },
-      { label: 'Nacionalidad', value: this.player.nacionalidad },
-      { label: 'Biografía', value: this.player.biografia }
+      { label: 'Edad', value: this.player.edad },
+      { label: 'Altura', value: this.player.altura },
+      { label: 'Nacionalidad', value: this.player.nacionalidad }
     ]
   }
 
