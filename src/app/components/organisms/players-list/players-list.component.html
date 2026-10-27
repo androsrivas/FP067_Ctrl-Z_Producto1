@@ -1,12 +1,11 @@
 <ng-container *ngIf="players | filterPlayers: searchText : position as filtered">
-    <ng-container *ngIf="filtered.length > 0; else empty">
-        <app-player-card
-            *ngFor="let player of filtered; trackBy: trackById"
-            [player]="player"
-            [selected]="player.id === selectedId"
-            (cardClick)="select($event)">
-        </app-player-card>
-    </ng-container>
+    <div *ngIf="filtered.length > 0; else empty" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-3">
+        <div class="col" *ngFor="let player of filtered; trackBy: trackById">
+            <app-player-card *ngFor="let player of filtered; trackBy: trackById" [player]="player"
+                [selected]="player.id === selectedId" (cardClick)="select($event)">
+            </app-player-card>
+        </div>
+    </div>
 </ng-container>
 
 <ng-template #empty>
