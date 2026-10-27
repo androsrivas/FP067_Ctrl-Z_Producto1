@@ -4,11 +4,12 @@ import { PlayerCardComponent } from '../../molecules/player-card/player-card.com
 import { Player } from '../../../models/player.model';
 import { PLAYERS_DATA } from '../../../data/players.mock';
 import { FilterPlayersPipe } from '../../../pipes/filter-players.pipe';
+import { SortPlayersPipe } from '../../../pipes/sort-players.pipe';
 
 @Component({
   selector: 'app-players-list',
   standalone: true,
-  imports: [NgFor, NgIf, PlayerCardComponent, FilterPlayersPipe],
+  imports: [NgFor, NgIf, PlayerCardComponent, FilterPlayersPipe, SortPlayersPipe],
   templateUrl: './players-list.component.html',
   styleUrl: './players-list.component.css'
 })
@@ -17,6 +18,7 @@ export class PlayersListComponent {
 
   @Input() searchText = '';
   @Input() position = '';
+  @Input() sortBy = 'position';
   @Input() selectedId: number | null = null;
   @Output() playerSelected = new EventEmitter<Player>();
 
