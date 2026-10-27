@@ -1,0 +1,13 @@
+<app-team-layout>
+  <app-players-list
+    [selectedId]="selectedPlayer?.id ?? null"
+    (playerSelected)="selectedPlayer = $event"
+  ></app-players-list>
+
+  <app-player-detail
+    [player]="selectedPlayer"
+    (closed)="selectedPlayer = null"
+  ></app-player-detail>
+
+  <app-player-media [player]="selectedPlayer"></app-player-media>
+</app-team-layout>
